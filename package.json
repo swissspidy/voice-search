@@ -1,0 +1,34 @@
+{
+  "name"           : "voice-search",
+  "version"        : "1.0.0",
+  "description"    : "Allows visitors to search the site using their voice.",
+  "private"        : true,
+  "repository"     : {
+    "type": "git",
+    "url" : "git@github.com:swissspidy/voice-search.git"
+  },
+  "devDependencies": {
+    "grunt"                      : "*",
+    "grunt-autoprefixer"         : "*",
+    "grunt-concurrent"           : "*",
+    "grunt-contrib-clean"        : "*",
+    "grunt-contrib-compress"     : "*",
+    "grunt-contrib-concat"       : "*",
+    "grunt-contrib-copy"         : "*",
+    "grunt-contrib-csslint"      : "*",
+    "grunt-contrib-cssmin"       : "*",
+    "grunt-contrib-sass"         : "*",
+    "grunt-contrib-uglify"       : "*",
+    "grunt-contrib-watch"        : "*",
+    "grunt-csscomb"              : "*",
+    "grunt-newer"                : "*",
+    "grunt-scss-lint"            : "*",
+    "grunt-wp-i18n"              : "*",
+    "grunt-wp-readme-to-markdown": "*",
+    "load-grunt-config"          : "*",
+    "time-grunt"                 : "*"
+  },
+  "dependencies"   : {
+    "time-grunt": "*"
+  }
+}

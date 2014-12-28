@@ -1,0 +1,12 @@
+# General
+.DS_Store
+
+# npm
+node_modules
+
+# Sass
+.sass-cache
+
+# Vendor (e.g. Composer)
+vendor/*
+!vendor/.gitkeep

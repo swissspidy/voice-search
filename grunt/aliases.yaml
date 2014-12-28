@@ -1,0 +1,12 @@
+default:
+  - 'watch'
+js:
+  - 'concat'
+  - 'uglify'
+css:
+  - 'sass'
+  - 'cssmin'
+  - 'autoprefixer'
+i18n:
+  - 'addtextdomain'
+  - 'makepot'
