@@ -13,7 +13,7 @@ Allows visitors to search the site using their voice.
 
 Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
 
-See [this blog post](https://spinpress.com/wordpress-web-speech-api/ ‎ "Enabling Voice Search in WordPress Using The Web Speech API") for further information about the plugin.
+See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling Voice Search in WordPress Using The Web Speech API") for further information about the plugin.
 
 == Installation ==
 
