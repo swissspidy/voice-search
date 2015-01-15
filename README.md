@@ -3,7 +3,7 @@
 **Tags:** voice, search, speech, api,  
 **Requires at least:** 2.6  
 **Tested up to:** 4.1  
-**Stable tag:** 1.0.0  
+**Stable tag:** 1.0.1-beta  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -31,6 +31,14 @@ There could be many reasons for this:
 * Your theme doesn't use the `get_search_form()` function properly. The plugin relies on the default search form markup
 * Your theme does some CSS things that the microphone button is hidden.
 
+### Does this plugin still allow users to type or does it entirely replace typing with voice search? ###
+
+No, users are still able to type in the search box whatever they want. Voice search is just a nice addition.
+
+### How does it integrate with other search-enhancing plugins such as Relevanssi? ###
+
+In my tests, there weren't any problems with other plugins like Relevanssi.
+
 ## Screenshots ##
 
 ### 1. The microphone button added to the search form by the plugin. ###
@@ -38,6 +46,9 @@ There could be many reasons for this:
 
 
 ## Changelog ##
+
+### 1.0.1 ###
+* Improvement: Better theme compatibility
 
 ### 1.0 ###
 * Initial release.
