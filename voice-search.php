@@ -14,7 +14,7 @@
  * Plugin Name:       Voice Search
  * Plugin URI:        https://spinpress.com/wordpress-web-speech-api/
  * Description:       Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
- * Version:           1.0.1
+ * Version:           1.0.1-beta
  * Author:            Pascal Birchler
  * Author URI:        https://pascalbirchler.com
  * Text Domain:       voice-search
