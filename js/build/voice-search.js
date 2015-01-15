@@ -19,6 +19,12 @@
 
   // Get all search forms
   var speechInputWrappers = document.querySelectorAll('form[role=search]');
+  if (speechInputWrappers.length == 0) {
+    speechInputWrappers = document.querySelectorAll('form[class=searchform]');
+  }
+  if (speechInputWrappers.length == 0) {
+    speechInputWrappers = document.querySelectorAll('form[id=searchform]');
+  }
 
   [].forEach.call(speechInputWrappers, function (speechInputWrapper) {
     var inputEl = speechInputWrapper.querySelector('input[name=s]');
