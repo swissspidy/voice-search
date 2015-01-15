@@ -24,6 +24,7 @@
 	padding: 0 !important;
 	background: none !important;
 	font: 0/0 a !important;
+	box-shadow: none !important;
 }
 
 .voice-search-mic,
@@ -43,6 +44,7 @@
 	left: 37.5%; /* 12px / 32px */
 	right: 37.5%; /* 12px / 32px */
 	border-radius: 99px 99px 0 0;
+	cursor: pointer;
 
 	&:before {
 		position: absolute;

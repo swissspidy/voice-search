@@ -19,7 +19,8 @@
   border: 0;
   padding: 0 !important;
   background: none !important;
-  font: 0/0 a !important; }
+  font: 0/0 a !important;
+  box-shadow: none !important; }
 
 .voice-search-mic,
 .voice-search-mic:after,
@@ -40,7 +41,8 @@
   /* 12px / 32px */
   right: 37.5%;
   /* 12px / 32px */
-  border-radius: 99px 99px 0 0; }
+  border-radius: 99px 99px 0 0;
+  cursor: pointer; }
   .voice-search-mic:before {
     position: absolute;
     z-index: 1;
