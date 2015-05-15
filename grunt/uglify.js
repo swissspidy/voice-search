@@ -1,24 +1,18 @@
 module.exports = {
-  options: {
-    banner   : '/*! <%= package.name %> - v<%= package.version %> - ' +
-    '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
-    mangle   : {
-      except: ['jQuery', 'Backbone']
-    },
-    sourceMap: true,
-    compress : {
-      global_defs : {
-        "DEBUG": false
-      },
-      dead_code   : true,
-      drop_console: true
-    },
-    beautify : false
-  },
-
-  dist: {
-    files: {
-      'js/build/voice-search.min.js': ['js/build/voice-search.js']
-    }
-  }
-};
+	all: {
+		files  : {
+			'js/voice-search.min.js': ['js/voice-search.js']
+		},
+		options: {
+			banner   : '/*! <%= package.title %> - v<%= package.version %>\n' +
+			' * <%= package.homepage %>\n' +
+			' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
+			' * Licensed GPLv2+' +
+			' */\n',
+			sourceMap: true,
+			mangle   : {
+				except: ['jQuery']
+			}
+		}
+	}
+}
