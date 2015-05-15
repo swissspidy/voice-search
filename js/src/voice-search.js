@@ -26,7 +26,15 @@
   }
 
   [].forEach.call(speechInputWrappers, function (speechInputWrapper) {
+    // Find the search input
     var inputEl = speechInputWrapper.querySelector('input[name=s]');
+    if (null === inputEl) {
+      inputEl = speechInputWrapper.querySelector('input[name=search]');
+    }
+    if (null === inputEl) {
+      return;
+    }
+
     speechInputWrapper.classList.add('voice-search-wrapper');
 
     // Add some markup to the search form
