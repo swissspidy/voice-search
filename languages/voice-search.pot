@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Voice Search 1.1.0\n"
+"Project-Id-Version: Voice Search 1.1.0-alpha\n"
 "Report-Msgid-Bugs-To: https://pascalbirchler.com\n"
 "POT-Creation-Date: 2014-12-28 12:54:34+00:00\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,9 @@ msgid "https://spinpress.com/wordpress-web-speech-api/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Allows visitors to search the site using their voice."
+msgid ""
+"Allows visitors to search the site using their voice. Currently supported "
+"by Safari and Chrome on both desktop and mobile."
 msgstr ""
 
 #. Author of the plugin/theme
