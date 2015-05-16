@@ -60,9 +60,9 @@
 		var inputHeight = inputEl.offsetHeight;
 		var inputRightBorder = parseInt(getComputedStyle(inputEl).borderRightWidth, 10);
 		var buttonSize = 0.8 * inputHeight;
-		micBtn.style.top = 0.1 * inputHeight + 'px !important';
-		micBtn.style.height = micBtn.style.width = buttonSize + 'px !important';
-		inputEl.style.paddingRight = buttonSize - inputRightBorder + 'px !important';
+		micBtn.style.top = 0.1 * inputHeight + 'px';
+		micBtn.style.height = micBtn.style.width = buttonSize + 'px';
+		inputEl.style.paddingRight = buttonSize - inputRightBorder + 'px';
 		speechInputWrapper.appendChild(micBtn);
 
 		// Setup recognition
