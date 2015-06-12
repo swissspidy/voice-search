@@ -2,7 +2,7 @@
   "name": "voice-search",
   "title": "Voice Search",
   "description": "Allows visitors to search the site using their voice.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://spinpress.com/wordpress-web-speech-api/",
   "author": {
     "name": "Pascal Birchler",
