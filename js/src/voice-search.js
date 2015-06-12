@@ -14,7 +14,7 @@
 		return;
 	}
 
-	var patience = 6;
+	var patience = 3;
 
 	// Capitalize a string
 	function capitalize(str) {
