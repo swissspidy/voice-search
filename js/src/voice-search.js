@@ -31,12 +31,19 @@
 	}
 
 	[].forEach.call(speechInputWrappers, function (speechInputWrapper) {
+		// Try to show the form temporarily so we can calculate the sizes
+		var speechInputWrapperStyle = speechInputWrapper.getAttribute('style');
+		speechInputWrapper.setAttribute('style', speechInputWrapperStyle + '; display: block !important');
+
 		// Find the search input
 		var inputEl = speechInputWrapper.querySelector('input[name=s]');
 		if (null === inputEl) {
 			inputEl = speechInputWrapper.querySelector('input[name=search]');
 		}
 		if (null === inputEl) {
+			// Reset form style again
+			speechInputWrapper.setAttribute('style', speechInputWrapperStyle);
+
 			return;
 		}
 
@@ -56,16 +63,27 @@
 		holder.setAttribute('class', 'voice-search-holder');
 		micBtn.appendChild(holder);
 
+		function getNumber(number) {
+			number = parseInt(number, 10);
+			return isNaN(number) || number === null || typeof(number) === 'undefined' ? 0 : number;
+		}
+
 		// Size and position them
-		var inputHeight = inputEl.offsetHeight;
-		var inputRightBorder = parseInt(getComputedStyle(inputEl).borderRightWidth, 10);
-		var buttonSize = 0.8 * inputHeight;
-		var inlineStyle = 'top: ' + 0.1 * inputHeight + 'px; ';
+		var inputHeight = getNumber(inputEl.offsetHeight),
+				inputRightBorder = getNumber(getComputedStyle(inputEl).borderRightWidth),
+				buttonSize = getNumber(0.8 * inputHeight),
+				buttonOffsetTop = getNumber(0.1 * inputHeight) + getNumber(getComputedStyle(speechInputWrapper).getPropertyValue('padding-top'));
+
+		var inlineStyle = 'top: ' + buttonOffsetTop + 'px; ';
 		inlineStyle += 'height: ' + buttonSize + 'px !important; ';
 		inlineStyle += 'width: ' + buttonSize + 'px !important; ';
-		inlineStyle += 'padding-right: ' + buttonSize - inputRightBorder + 'px !important; ';
+		inlineStyle += 'margin-right: ' + getNumber(buttonSize - inputRightBorder) + 'px !important; ';
+
 		micBtn.setAttribute('style', inlineStyle);
 		speechInputWrapper.appendChild(micBtn);
+
+		// Reset form style again
+		speechInputWrapper.setAttribute('style', speechInputWrapperStyle);
 
 		// Setup recognition
 		var finalTranscript = '';

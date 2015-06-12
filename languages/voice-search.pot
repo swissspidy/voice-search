@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Voice Search 1.1.0-alpha\n"
+"Project-Id-Version: Voice Search 1.2.0\n"
 "Report-Msgid-Bugs-To: https://pascalbirchler.com\n"
 "POT-Creation-Date: 2014-12-28 12:54:34+00:00\n"
 "MIME-Version: 1.0\n"

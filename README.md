@@ -12,7 +12,7 @@ Allows visitors to search the site using their voice.
 
 ## Description ##
 
-Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
+Allows visitors to search the site using their voice. Currently only supported by Chrome on both desktop and mobile. See [this technical reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) for more details.
 
 See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling Voice Search in WordPress Using The Web Speech API") for further information about the plugin.
 
@@ -30,7 +30,7 @@ See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling V
 
 There could be many reasons for this:
 
-* You’re not using Safari or Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
+* You’re not Google Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
 * Your theme doesn’t use the `get_search_form()` function properly. The plugin relies on the default search form markup
 * Your theme does some CSS things that prevents the microphone button from being displayed.
 
@@ -48,6 +48,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog ##
 
+### 1.2.0 ###
+* Improve compatibility with themes that initially hide the search forms
+* Update browser support info in the readme
+
 ### 1.1.0 ###
 * Complete rewrite of the plugin
 * Improved theme compatibility
@@ -59,6 +63,9 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 * Initial release
 
 ## Upgrade Notice ##
+
+### 1.2.0 ###
+Some themes have really bad search forms. But don’t worry no more! This plugins supports themes like Divi too!
 
 ### 1.1.0 ###
 This update brings you even better compatibility with popular themes.
