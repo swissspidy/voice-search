@@ -12,7 +12,7 @@ Allows visitors to search the site using their voice.
 
 ## Description ##
 
-Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
+Allows visitors to search the site using their voice. Currently only supported by Chrome on both desktop and mobile. See [this technical reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) for more details.
 
 See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling Voice Search in WordPress Using The Web Speech API") for further information about the plugin.
 
@@ -30,7 +30,7 @@ See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling V
 
 There could be many reasons for this:
 
-* You’re not using Safari or Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
+* You’re not Google Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
 * Your theme doesn’t use the `get_search_form()` function properly. The plugin relies on the default search form markup
 * Your theme does some CSS things that prevents the microphone button from being displayed.
 
