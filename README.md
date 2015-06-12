@@ -48,6 +48,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog ##
 
+### 1.2.0 ###
+* Improve compatibility with themes that initially hide the search forms
+* Update browser support info in the readme
+
 ### 1.1.0 ###
 * Complete rewrite of the plugin
 * Improved theme compatibility
@@ -59,6 +63,9 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 * Initial release
 
 ## Upgrade Notice ##
+
+### 1.2.0 ###
+Some themes have really bad search forms. But don’t worry no more! This plugins supports themes like Divi too!
 
 ### 1.1.0 ###
 This update brings you even better compatibility with popular themes.
