@@ -49,6 +49,14 @@
 
 		speechInputWrapper.classList.add('voice-search-wrapper');
 
+		// Pressing enter should submit the search, not press the voice search button
+		speechInputWrapper.addEventListener('keypress', function (e) {
+			if (e.keyCode && e.keyCode === 13) {
+				speechInputWrapper.submit();
+				return false;
+			}
+		}, false);
+
 		// Add some markup to the search form
 
 		var micBtn = document.createElement('button');
