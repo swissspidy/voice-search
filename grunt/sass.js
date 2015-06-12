@@ -1,11 +1,7 @@
 module.exports = {
-  dist: {
-    files: [{
-      expand: true,
-      cwd   : 'css/src',
-      src   : ['*.scss'],
-      dest  : 'css/build',
-      ext   : '.css'
-    }]
-  }
-};
+	dist: {
+		files: {
+			'css/voice-search.css': 'css/src/voice-search.scss'
+		}
+	}
+}
