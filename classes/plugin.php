@@ -42,7 +42,7 @@ class Voice_Search_Plugin extends WP_Stack_Plugin2 {
 
 		wp_enqueue_script(
 			'voice-search',
-			$this->get_url() . 'js/voice-search' . $suffix . ' .js',
+			$this->get_url() . 'js/voice-search' . $suffix . '.js',
 			array(),
 			self::VERSION,
 			true
