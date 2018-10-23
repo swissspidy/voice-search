@@ -24,16 +24,7 @@ class Voice_Search_Plugin extends WP_Stack_Plugin2 {
 	 * Adds hooks.
 	 */
 	public function add_hooks() {
-		$this->hook( 'init' );
-
 		$this->hook( 'wp_enqueue_scripts', 'enqueue_scripts' );
-	}
-
-	/**
-	 * Initializes the plugin, registers textdomain, etc.
-	 */
-	public function init() {
-		$this->load_textdomain( 'voice-search', '/languages' );
 	}
 
 	public function enqueue_scripts() {
