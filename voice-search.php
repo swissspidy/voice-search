@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Voice Search
  * Plugin URI:  https://github.com/swissspidy/voice-search
- * Description: Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
+ * Description: Allows visitors using Google Chrome to search the site using their voice.
  * Version:     1.2.1
  * Author:      Pascal Birchler
  * Author URI:  https://pascalbirchler.com
