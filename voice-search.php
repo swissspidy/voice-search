@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Voice Search
- * Plugin URI:  https://spinpress.com/wordpress-web-speech-api/
+ * Plugin URI:  https://github.com/swissspidy/voice-search
  * Description: Allows visitors to search the site using their voice. Currently supported by Safari and Chrome on both desktop and mobile.
  * Version:     1.2.1
  * Author:      Pascal Birchler
@@ -12,7 +12,7 @@
  */
 
 /**
- * Copyright (c) 2015 Pascal Birchler (email : support@spinpress.com)
+ * Copyright (c) 2018 Pascal Birchler (swissspidy@chat.wordpress.org)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at
@@ -31,20 +31,27 @@
 
 defined( 'WPINC' ) or die;
 
-include( dirname( __FILE__ ) . '/lib/requirements-check.php' );
-
-$voice_search_requirements_check = new Voice_Search_Requirements_Check( array(
-	'title' => 'Voice Search',
-	'php'   => '5.3',
-	'wp'    => '2.6',
-	'file'  => __FILE__,
-));
-
-if ( $voice_search_requirements_check->passes() ) {
-	// Pull in the plugin classes and initialize
-	include( dirname( __FILE__ ) . '/lib/wp-stack-plugin.php' );
-	include( dirname( __FILE__ ) . '/classes/plugin.php' );
-	Voice_Search_Plugin::start( __FILE__ );
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+	require dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 
-unset( $voice_search_requirements_check );
+$requirements_check = new WP_Requirements_Check( array(
+	'title' => __( 'Voice Search', 'voice-search' ),
+	'php'   => '5.3',
+	'wp'    => '4.7',
+	'file'  => __FILE__,
+	'i18n'  => array(
+		/* translators: 1: plugin name. 2: minimum PHP version. */
+		'php' => __( '&#8220;%1$s&#8221; requires PHP %2$s or higher. Please upgrade.', 'voice-search' ),
+		/* translators: 1: plugin name. 2: minimum WordPress version. */
+		'wp'  => __( '&#8220;%1$s&#8221; requires WordPress %2$s or higher. Please upgrade.', 'voice-search' ),
+	),
+) );
+
+if ( $requirements_check->passes() ) {
+	require_once dirname( __FILE__ ) . '/inc/namespace.php';
+
+	VoiceSearch\bootstrap();
+}
+
+unset( $requirements_check );
