@@ -1,19 +1,33 @@
 {
   "name": "voice-search",
-  "title": "Voice Search",
+  "private": true,
   "description": "Allows visitors to search the site using their voice.",
-  "version": "1.2.1",
-  "homepage": "https://github.com/swissspidy/voice-search",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swissspidy/voice-search"
+  },
   "author": {
     "name": "Pascal Birchler",
     "email": "swissspidy@chat.wordpress.org",
     "url": "https://pascalbirchler.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swissspidy/voice-search"
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/swissspidy/voice-search/issues"
   },
+  "homepage": "https://github.com/swissspidy/voice-search",
   "devDependencies": {
+    "@wordpress/dom-ready": "^2.12.1",
+    "@wordpress/i18n": "^3.18.0",
+    "@wordpress/scripts": "^13.0.3",
+    "rtlcss-webpack-plugin": "^4.0.6"
   },
-  "keywords": []
+  "scripts": {
+    "build": "wp-scripts build src/voice-search.js",
+    "start": "wp-scripts start src/voice-search.js",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:md:js": "wp-scripts lint-md-js"
+  }
 }

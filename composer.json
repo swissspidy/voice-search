@@ -1,18 +1,35 @@
 {
   "name": "swissspidy/voice-search",
   "description": "Allows visitors to search the site using their voice.",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "type": "wordpress-plugin",
   "license": "GPL-2.0+",
   "authors": [
-	{
-	  "name": "Pascal Birchler",
-	  "email": "support@spinpress.com",
-	  "homepage": "https://pascalbirchler.com",
-	  "role": "Developer"
-	}
+    {
+      "name": "Pascal Birchler",
+      "email": "swissspidy@chat.wordpress.org",
+      "homepage": "https://pascalbirchler.com",
+      "role": "Developer"
+    }
   ],
+  "config": {
+    "platform": {
+      "php": "5.6.20"
+    }
+  },
   "require": {
-    "wearerequired/wp-requirements-check": "^1.0"
+    "php": ">=5.6.20",
+    "wearerequired/wp-requirements-check": "^1.1"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.0",
+    "wp-coding-standards/wpcs": "^2.1",
+    "yoast/phpunit-polyfills": "^0.2.0"
+  },
+  "scripts": {
+    "format": "vendor/bin/phpcbf --report-summary --report-source .",
+    "lint": "vendor/bin/phpcs --report-summary --report-source .",
+    "test": "vendor/bin/phpunit"
   }
 }

@@ -1,0 +1,51 @@
+/**
+ * Voice Search
+ * https://spinpress.com/wordpress-web-speech-api/
+ *
+ * Copyright (c) 2015 Pascal Birchler
+ * Licensed under the GPLv2+ license.
+ */
+
+.voice-search-wrapper {
+	display: inline-block;
+	position: relative;
+}
+
+.voice-search-wrapper input {
+	margin: 0;
+}
+
+.voice-search-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 30px !important;
+	width: 30px !important;
+	margin: 0;
+	border: 0;
+	padding: 0 !important;
+	background: none !important;
+	font-size: 0 !important;
+	box-shadow: none !important;
+	color: inherit;
+}
+
+.voice-search-screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.voice-search-mic svg {
+	width: 100%;
+	height: 100%;
+}

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+* Updated for WordPress 5.7 compatibility
+
 ## 1.2.1
 
 * Less patience for quicker feedback after speech input

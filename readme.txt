@@ -1,12 +1,13 @@
 # Voice Search
-Contributors:      swissspidy  
-Donate link:       https://pascalbirchler.com  
-Tags:              voice, search, speech, api,  
-Requires at least: 2.6  
-Tested up to:      5.5  
-Stable tag:        1.1.0  
-License:           GPLv2 or later  
-License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors:      swissspidy
+Donate link:       https://pascalbirchler.com
+Tags:              voice, search, speech, recogniition
+Requires at least: 5.0
+Tested up to:      5.7
+Requires PHP:      5.6
+Stable tag:        1.3.0
+License:           GPLv2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
 Allows visitors to search the site using their voice.
 
@@ -48,6 +49,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog
 
+### 1.3.0
+
+* Updated for WordPress 5.7 compatibility
+
 ### 1.2.1
 
 * Less patience for quicker feedback after speech input
@@ -73,6 +78,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Upgrade Notice
 
+### 1.3.0
+
+Updated for WordPress 5.7 compatibility.
+
 ### 1.2.1
 
 Pressing enter now submits the form instead of triggering the microphone button. Also, quicker feedback thanks to less patience.
@@ -81,7 +90,7 @@ Pressing enter now submits the form instead of triggering the microphone button.
 
 Some themes have really bad search forms. But don’t worry no more! This plugins supports themes like Divi too!
 
-### 1.1.0 ###
+### 1.1.0 ###
 
 This update brings you even better compatibility with popular themes.
 
