@@ -45,4 +45,6 @@ function enqueue_scripts() {
 		$asset['version'],
 		'screen'
 	);
+
+	wp_style_add_data( 'voice-search', 'rtl', 'replace' );
 }
