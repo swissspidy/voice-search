@@ -84,8 +84,6 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		left: inputPosition.left - wrapperPosition.left,
 	};
 
-	console.log(relativePosition, inputPosition.right, wrapperPosition.right);
-
 	const inputHeight = getNumber( inputEl.offsetHeight );
 	const buttonSize = getNumber( 0.8 * inputHeight );
 	const buttonOffsetTop =
