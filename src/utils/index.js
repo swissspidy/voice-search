@@ -98,7 +98,7 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		top: ${ buttonOffsetTop + relativePosition.top }px;
 		height: ${ buttonSize }px !important;
 		width: ${ buttonSize }px !important;
-		right: ${ Math.abs(relativePosition.right) }px !important;
+		right: ${ Math.abs( relativePosition.right ) }px !important;
 	`;
 
 	if ( document.documentElement.dir === 'rtl' ) {
