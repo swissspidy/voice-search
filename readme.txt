@@ -5,7 +5,7 @@ Tags:              voice, search, speech, recogniition
 Requires at least: 5.0
 Tested up to:      5.7
 Requires PHP:      5.6
-Stable tag:        1.3.0
+Stable tag:        1.3.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog
 
+### 1.3.1
+
+* Removed some unwanted console messages.
+
 ### 1.3.0
 
 * Updated for WordPress 5.7 compatibility
@@ -77,6 +81,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 * Initial release
 
 ## Upgrade Notice
+
+### 1.3.1
+
+Minor bugfix release to remove some unwanted console messages.
 
 ### 1.3.0
 
