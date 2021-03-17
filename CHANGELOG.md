@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+
+* Removed some unwanted console messages.
+
 ## 1.3.0
 
 * Updated for WordPress 5.7 compatibility
