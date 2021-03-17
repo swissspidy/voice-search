@@ -1,9 +1,8 @@
 {
   "name": "swissspidy/voice-search",
   "description": "Allows visitors to search the site using their voice.",
-  "version": "1.3.0",
   "type": "wordpress-plugin",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Pascal Birchler",
