@@ -75,6 +75,8 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 	voiceSearchButton.appendChild( microphoneIcon );
 
 	// Size and position the microphone button.
+	// TODO: Use IntersectionObserver in case the form is initially hidden
+	// Example: Search form in Twenty Twenty.
 	const wrapperPosition = speechInputWrapper.getBoundingClientRect();
 	const inputPosition = inputEl.getBoundingClientRect();
 	const relativePosition = {
@@ -115,6 +117,7 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 	let finalTranscript = '';
 	let recognizing = false;
 	let timeout;
+	let submitTimeout;
 	let oldPlaceholder = null;
 	const recognition = new window.webkitSpeechRecognition();
 	recognition.continuous = true;
@@ -131,6 +134,7 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		recognizing = true;
 		voiceSearchButton.classList.add( 'listening' );
 		restartTimer();
+		clearTimeout(submitTimeout);
 	};
 
 	recognition.onend = () => {
@@ -140,6 +144,12 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		if ( oldPlaceholder !== null ) {
 			inputEl.placeholder = oldPlaceholder;
 		}
+
+		submitTimeout = setTimeout(() => {
+			if (!recognizing) {
+				typeof inputEl.form.requestSubmit !== 'undefined' ? inputEl.form.requestSubmit() : inputEl.form.submit();
+			}
+		}, 100)
 	};
 
 	recognition.onresult = ( event ) => {
@@ -151,6 +161,7 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		}
 		finalTranscript = capitalize( finalTranscript );
 		inputEl.value = finalTranscript;
+
 		restartTimer();
 	};
 
