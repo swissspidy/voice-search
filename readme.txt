@@ -3,7 +3,7 @@ Contributors:      swissspidy
 Donate link:       https://pascalbirchler.com
 Tags:              voice, search, speech, recogniition
 Requires at least: 5.0
-Tested up to:      5.7
+Tested up to:      5.8
 Requires PHP:      5.6
 Stable tag:        1.3.1
 License:           GPLv2 or later
@@ -49,6 +49,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog
 
+### 1.4.0
+
+* The search form now auto-submits after finishing speaking.
+
 ### 1.3.1
 
 * Removed some unwanted console messages.
@@ -81,6 +85,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 * Initial release
 
 ## Upgrade Notice
+
+### 1.4.0
+
+The search form now auto-submits after finishing speaking.
 
 ### 1.3.1
 
