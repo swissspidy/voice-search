@@ -134,7 +134,7 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		recognizing = true;
 		voiceSearchButton.classList.add( 'listening' );
 		restartTimer();
-		clearTimeout(submitTimeout);
+		clearTimeout( submitTimeout );
 	};
 
 	recognition.onend = () => {
@@ -145,11 +145,15 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 			inputEl.placeholder = oldPlaceholder;
 		}
 
-		submitTimeout = setTimeout(() => {
-			if (!recognizing) {
-				typeof inputEl.form.requestSubmit !== 'undefined' ? inputEl.form.requestSubmit() : inputEl.form.submit();
+		submitTimeout = setTimeout( () => {
+			if ( ! recognizing ) {
+				if ( typeof inputEl.form.requestSubmit !== 'undefined' ) {
+					inputEl.form.requestSubmit();
+				} else {
+					inputEl.form.submit();
+				}
 			}
-		}, 100)
+		}, 100 );
 	};
 
 	recognition.onresult = ( event ) => {
