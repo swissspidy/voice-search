@@ -19,7 +19,7 @@
   "devDependencies": {
     "@wordpress/dom-ready": "^3.20.0",
     "@wordpress/i18n": "^4.19.0",
-    "@wordpress/scripts": "^24.3.0",
+    "@wordpress/scripts": "^24.4.0",
     "rtlcss-webpack-plugin": "^4.0.6"
   },
   "scripts": {
