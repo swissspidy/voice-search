@@ -36,8 +36,8 @@
 
 defined( 'WPINC' ) or die;
 
-if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
-	require dirname( __FILE__ ) . '/vendor/autoload.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
 }
 
 $voice_search_requirements_check = new WP_Requirements_Check(
@@ -56,7 +56,7 @@ $voice_search_requirements_check = new WP_Requirements_Check(
 );
 
 if ( $voice_search_requirements_check->passes() ) {
-	require_once dirname( __FILE__ ) . '/inc/namespace.php';
+	require_once __DIR__ . '/inc/namespace.php';
 
 	VoiceSearch\bootstrap();
 }
