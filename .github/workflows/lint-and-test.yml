@@ -142,7 +142,9 @@ jobs:
       # See https://make.wordpress.org/core/handbook/references/phpunit-compatibility-and-wordpress-versions/
       - name: Update PHPUnit
         run: |
-          composer update --ignore-platform-reqs --no-interaction --no-scripts yoast/phpunit-polyfills --with-dependencies
+          if [[ $PHP_VERSION != "7.0" ]]; then
+            composer update --ignore-platform-reqs --no-interaction --no-scripts yoast/phpunit-polyfills --with-dependencies
+          fi
         env:
           WP_VERSION: ${{ matrix.wp }}
           PHP_VERSION: ${{ matrix.php }}
