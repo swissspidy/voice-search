@@ -13,43 +13,43 @@ const MICROPOHNE = `
  * @param {string} str Input string.
  * @return {string} Capitalized string.
  */
-export function capitalize( str ) {
-	return str.length ? str[ 0 ].toUpperCase() + str.slice( 1 ) : str;
+export function capitalize(str) {
+	return str.length ? str[0].toUpperCase() + str.slice(1) : str;
 }
 
-export function getNumber( number ) {
-	number = parseInt( number, 10 );
-	return isNaN( number ) || number === null || typeof number === 'undefined'
+export function getNumber(number) {
+	number = parseInt(number, 10);
+	return isNaN(number) || number === null || typeof number === 'undefined'
 		? 0
 		: number;
 }
 
 const PATIENCE = 3;
 
-export function initializeVoiceSearch( speechInputWrapper ) {
+export function initializeVoiceSearch(speechInputWrapper) {
 	// Ensure search form is visible so we can calculate the sizes
 	const speechInputWrapperStyle = speechInputWrapper.style.cssText || '';
 	speechInputWrapper.style.display = 'block !important';
 
 	// Find the search input
 	const inputEl =
-		speechInputWrapper.querySelector( 'input[name=s]' ) ||
-		speechInputWrapper.querySelector( 'input[name=search]' );
-	if ( null === inputEl ) {
+		speechInputWrapper.querySelector('input[name=s]') ||
+		speechInputWrapper.querySelector('input[name=search]');
+	if (null === inputEl) {
 		// Reset form style again.
 		speechInputWrapper.style.cssText = speechInputWrapperStyle;
 
 		return;
 	}
 
-	speechInputWrapper.classList.add( 'voice-search-wrapper' );
-	inputEl.classList.add( 'voice-search-input' );
+	speechInputWrapper.classList.add('voice-search-wrapper');
+	inputEl.classList.add('voice-search-input');
 
 	// Pressing enter should submit the search, not press the voice search button
 	speechInputWrapper.addEventListener(
 		'keypress',
-		( e ) => {
-			if ( e.keyCode && e.keyCode === 13 ) {
+		(e) => {
+			if (e.keyCode && e.keyCode === 13) {
 				speechInputWrapper.submit();
 				return false;
 			}
@@ -59,20 +59,20 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 
 	// Add some markup to the search form
 
-	const voiceSearchButton = document.createElement( 'button' );
-	voiceSearchButton.setAttribute( 'class', 'voice-search-button' );
+	const voiceSearchButton = document.createElement('button');
+	voiceSearchButton.setAttribute('class', 'voice-search-button');
 
-	const screenReaderText = document.createElement( 'span' );
-	screenReaderText.setAttribute( 'class', 'voice-search-screen-reader-text' );
+	const screenReaderText = document.createElement('span');
+	screenReaderText.setAttribute('class', 'voice-search-screen-reader-text');
 	screenReaderText.appendChild(
-		document.createTextNode( __( 'Speech Input', 'voice-search' ) )
+		document.createTextNode(__('Speech Input', 'voice-search'))
 	);
-	voiceSearchButton.appendChild( screenReaderText );
+	voiceSearchButton.appendChild(screenReaderText);
 
-	const microphoneIcon = document.createElement( 'span' );
-	microphoneIcon.setAttribute( 'class', 'voice-search-mic' );
+	const microphoneIcon = document.createElement('span');
+	microphoneIcon.setAttribute('class', 'voice-search-mic');
 	microphoneIcon.innerHTML = MICROPOHNE;
-	voiceSearchButton.appendChild( microphoneIcon );
+	voiceSearchButton.appendChild(microphoneIcon);
 
 	// Size and position the microphone button.
 	// TODO: Use IntersectionObserver in case the form is initially hidden
@@ -86,29 +86,29 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 		left: inputPosition.left - wrapperPosition.left,
 	};
 
-	const inputHeight = getNumber( inputEl.offsetHeight );
-	const buttonSize = getNumber( 0.8 * inputHeight );
+	const inputHeight = getNumber(inputEl.offsetHeight);
+	const buttonSize = getNumber(0.8 * inputHeight);
 	const buttonOffsetTop =
-		getNumber( 0.1 * inputHeight ) +
+		getNumber(0.1 * inputHeight) +
 		getNumber(
 			window
-				.getComputedStyle( speechInputWrapper )
-				.getPropertyValue( 'padding-top' )
+				.getComputedStyle(speechInputWrapper)
+				.getPropertyValue('padding-top')
 		);
 
 	voiceSearchButton.style.cssText = `
-		top: ${ buttonOffsetTop + relativePosition.top }px;
-		height: ${ buttonSize }px !important;
-		width: ${ buttonSize }px !important;
-		right: ${ Math.abs( relativePosition.right ) }px !important;
+		top: ${buttonOffsetTop + relativePosition.top}px;
+		height: ${buttonSize}px !important;
+		width: ${buttonSize}px !important;
+		right: ${Math.abs(relativePosition.right)}px !important;
 	`;
 
-	if ( document.documentElement.dir === 'rtl' ) {
+	if (document.documentElement.dir === 'rtl') {
 		voiceSearchButton.style.right = null;
-		voiceSearchButton.style.left = `left: ${ relativePosition.left }px !important;`;
+		voiceSearchButton.style.left = `left: ${relativePosition.left}px !important;`;
 	}
 
-	speechInputWrapper.appendChild( voiceSearchButton );
+	speechInputWrapper.appendChild(voiceSearchButton);
 
 	// Reset form style again.
 	speechInputWrapper.cssText = speechInputWrapperStyle;
@@ -123,47 +123,47 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 	recognition.continuous = true;
 
 	function restartTimer() {
-		timeout = setTimeout( () => {
+		timeout = setTimeout(() => {
 			recognition.stop();
-		}, PATIENCE * 1000 );
+		}, PATIENCE * 1000);
 	}
 
 	recognition.onstart = () => {
 		oldPlaceholder = inputEl.placeholder;
-		inputEl.placeholder = __( 'Start Talking…', 'voice-search' );
+		inputEl.placeholder = __('Start Talking…', 'voice-search');
 		recognizing = true;
-		voiceSearchButton.classList.add( 'listening' );
+		voiceSearchButton.classList.add('listening');
 		restartTimer();
-		clearTimeout( submitTimeout );
+		clearTimeout(submitTimeout);
 	};
 
 	recognition.onend = () => {
 		recognizing = false;
-		clearTimeout( timeout );
-		voiceSearchButton.classList.remove( 'listening' );
-		if ( oldPlaceholder !== null ) {
+		clearTimeout(timeout);
+		voiceSearchButton.classList.remove('listening');
+		if (oldPlaceholder !== null) {
 			inputEl.placeholder = oldPlaceholder;
 		}
 
-		submitTimeout = setTimeout( () => {
-			if ( ! recognizing ) {
-				if ( typeof inputEl.form.requestSubmit !== 'undefined' ) {
+		submitTimeout = setTimeout(() => {
+			if (!recognizing) {
+				if (typeof inputEl.form.requestSubmit !== 'undefined') {
 					inputEl.form.requestSubmit();
 				} else {
 					inputEl.form.submit();
 				}
 			}
-		}, 100 );
+		}, 100);
 	};
 
-	recognition.onresult = ( event ) => {
-		clearTimeout( timeout );
-		for ( let i = event.resultIndex; i < event.results.length; ++i ) {
-			if ( event.results[ i ].isFinal ) {
-				finalTranscript += event.results[ i ][ 0 ].transcript;
+	recognition.onresult = (event) => {
+		clearTimeout(timeout);
+		for (let i = event.resultIndex; i < event.results.length; ++i) {
+			if (event.results[i].isFinal) {
+				finalTranscript += event.results[i][0].transcript;
 			}
 		}
-		finalTranscript = capitalize( finalTranscript );
+		finalTranscript = capitalize(finalTranscript);
 		inputEl.value = finalTranscript;
 
 		restartTimer();
@@ -171,9 +171,9 @@ export function initializeVoiceSearch( speechInputWrapper ) {
 
 	voiceSearchButton.addEventListener(
 		'click',
-		( event ) => {
+		(event) => {
 			event.preventDefault();
-			if ( recognizing ) {
+			if (recognizing) {
 				recognition.stop();
 				return;
 			}
