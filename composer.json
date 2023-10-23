@@ -1,39 +1,39 @@
 {
-  "name": "swissspidy/voice-search",
-  "description": "Allows visitors to search the site using their voice.",
-  "type": "wordpress-plugin",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Pascal Birchler",
-      "email": "swissspidy@chat.wordpress.org",
-      "homepage": "https://pascalbirchler.com",
-      "role": "Developer"
-    }
-  ],
-  "config": {
-    "platform": {
-      "php": "5.6.20"
-    },
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "require": {
-    "php": ">=5.6.20",
-    "wearerequired/wp-requirements-check": "^1.1"
-  },
-  "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-    "phpcompatibility/phpcompatibility-wp": "^2.0",
-    "roave/security-advisories": "dev-latest",
-    "wp-coding-standards/wpcs": "^3.0",
-    "yoast/phpunit-polyfills": "^1.0.0"
-  },
-  "scripts": {
-    "format": "vendor/bin/phpcbf --report-summary --report-source .",
-    "lint": "vendor/bin/phpcs --report-summary --report-source .",
-    "test": "vendor/bin/phpunit",
-    "test:multisite": "vendor/bin/phpunit -c phpunit-multisite.xml.dist"
-  }
+	"name": "swissspidy/voice-search",
+	"description": "Allows visitors to search the site using their voice.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Pascal Birchler",
+			"email": "swissspidy@chat.wordpress.org",
+			"homepage": "https://pascalbirchler.com",
+			"role": "Developer"
+		}
+	],
+	"config": {
+		"platform": {
+			"php": "5.6.20"
+		},
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require": {
+		"php": ">=5.6.20",
+		"wearerequired/wp-requirements-check": "^1.1"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.0",
+		"roave/security-advisories": "dev-latest",
+		"wp-coding-standards/wpcs": "^3.0",
+		"yoast/phpunit-polyfills": "^1.0.0"
+	},
+	"scripts": {
+		"format": "vendor/bin/phpcbf --report-summary --report-source .",
+		"lint": "vendor/bin/phpcs --report-summary --report-source .",
+		"test": "vendor/bin/phpunit",
+		"test:multisite": "vendor/bin/phpunit -c phpunit-multisite.xml.dist"
+	}
 }

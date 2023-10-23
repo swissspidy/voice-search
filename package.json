@@ -1,33 +1,34 @@
 {
-  "name": "voice-search",
-  "private": true,
-  "description": "Allows visitors to search the site using their voice.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swissspidy/voice-search"
-  },
-  "author": {
-    "name": "Pascal Birchler",
-    "email": "swissspidy@chat.wordpress.org",
-    "url": "https://pascalbirchler.com"
-  },
-  "license": "GPL-2.0-or-later",
-  "bugs": {
-    "url": "https://github.com/swissspidy/voice-search/issues"
-  },
-  "homepage": "https://github.com/swissspidy/voice-search",
-  "devDependencies": {
-    "@wordpress/dom-ready": "^3.44.0",
-    "@wordpress/i18n": "^4.44.0",
-    "@wordpress/scripts": "^26.15.0",
-    "rtlcss-webpack-plugin": "^4.0.6"
-  },
-  "scripts": {
-    "build": "wp-scripts build src/voice-search.js",
-    "start": "wp-scripts start src/voice-search.js",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "lint:md:docs": "wp-scripts lint-md-docs",
-    "lint:md:js": "wp-scripts lint-md-js"
-  }
+	"name": "voice-search",
+	"private": true,
+	"description": "Allows visitors to search the site using their voice.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/swissspidy/voice-search"
+	},
+	"author": {
+		"name": "Pascal Birchler",
+		"email": "swissspidy@chat.wordpress.org",
+		"url": "https://pascalbirchler.com"
+	},
+	"license": "GPL-2.0-or-later",
+	"bugs": {
+		"url": "https://github.com/swissspidy/voice-search/issues"
+	},
+	"homepage": "https://github.com/swissspidy/voice-search",
+	"devDependencies": {
+		"@wordpress/dom-ready": "^3.44.0",
+		"@wordpress/i18n": "^4.44.0",
+		"@wordpress/scripts": "^26.15.0",
+		"rtlcss-webpack-plugin": "^4.0.6"
+	},
+	"scripts": {
+		"build": "wp-scripts build src/voice-search.js",
+		"start": "wp-scripts start src/voice-search.js",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:md:js": "wp-scripts lint-md-js",
+		"format": "wp-scripts format"
+	}
 }

@@ -1,9 +1,9 @@
 # Voice Search
 Contributors:      swissspidy
 Donate link:       https://pascalbirchler.com
-Tags:              voice, search, speech, recogniition
+Tags:              voice, search, speech, recognition
 Requires at least: 5.0
-Tested up to:      5.8
+Tested up to:      6.4
 Requires PHP:      5.6
 Stable tag:        1.4.0
 License:           GPLv2 or later

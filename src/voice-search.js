@@ -12,23 +12,25 @@ import domReady from '@wordpress/dom-ready';
 import { initializeVoiceSearch } from './utils';
 import './voice-search.css';
 
-domReady(() => {
-	if (!('webkitSpeechRecognition' in window)) {
+domReady( () => {
+	if ( ! ( 'webkitSpeechRecognition' in window ) ) {
 		return;
 	}
 
 	// Get all search forms
-	let speechInputWrappers = document.querySelectorAll('form[role=search]');
-	if (speechInputWrappers.length === 0) {
+	let speechInputWrappers = document.querySelectorAll( 'form[role=search]' );
+	if ( speechInputWrappers.length === 0 ) {
 		speechInputWrappers = document.querySelectorAll(
 			'form[class=searchform]'
 		);
 	}
-	if (speechInputWrappers.length === 0) {
-		speechInputWrappers = document.querySelectorAll('form[id=searchform]');
+	if ( speechInputWrappers.length === 0 ) {
+		speechInputWrappers = document.querySelectorAll(
+			'form[id=searchform]'
+		);
 	}
 
-	[...speechInputWrappers].forEach((speechInputWrapper) => {
-		initializeVoiceSearch(speechInputWrapper);
-	});
-});
+	[ ...speechInputWrappers ].forEach( ( speechInputWrapper ) => {
+		initializeVoiceSearch( speechInputWrapper );
+	} );
+} );
