@@ -166,6 +166,7 @@ jobs:
               with:
                   file: coverage.xml
                   flags: default
+                  token: ${{ secrets.CODECOV_TOKEN }}
               if: ${{ matrix.coverage }}
 
             - name: Upload code coverage report
@@ -173,4 +174,5 @@ jobs:
               with:
                   file: coverage-multisite.xml
                   flags: multisite
+                  token: ${{ secrets.CODECOV_TOKEN }}
               if: ${{ matrix.coverage }}
