@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8aa39b4fb355557181cd44d275257c5",
+    "content-hash": "3831125bed79cbb235ea1fa9529f09fd",
     "packages": [
         {
             "name": "wearerequired/wp-requirements-check",
@@ -1935,16 +1935,16 @@
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/code-unit-reverse-lookup.git",
-                "reference": "1de8cd5c010cb153fcd68b8d0f64606f523f7619"
+                "reference": "92a1a52e86d34cde6caa54f1b5ffa9fda18e5d54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/1de8cd5c010cb153fcd68b8d0f64606f523f7619",
-                "reference": "1de8cd5c010cb153fcd68b8d0f64606f523f7619",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit-reverse-lookup/zipball/92a1a52e86d34cde6caa54f1b5ffa9fda18e5d54",
+                "reference": "92a1a52e86d34cde6caa54f1b5ffa9fda18e5d54",
                 "shasum": ""
             },
             "require": {
@@ -1978,7 +1978,7 @@
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
             "support": {
                 "issues": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/issues",
-                "source": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/tree/1.0.2"
+                "source": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/tree/1.0.3"
             },
             "funding": [
                 {
@@ -1986,7 +1986,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-30T08:15:22+00:00"
+            "time": "2024-03-01T13:45:45+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -2843,24 +2843,26 @@
         },
         {
             "name": "yoast/phpunit-polyfills",
-            "version": "1.1.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast/PHPUnit-Polyfills.git",
-                "reference": "224e4a1329c03d8bad520e3fc4ec980034a4b212"
+                "reference": "4a088f125c970d6d6ea52c927f96fe39b330d0f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/224e4a1329c03d8bad520e3fc4ec980034a4b212",
-                "reference": "224e4a1329c03d8bad520e3fc4ec980034a4b212",
+                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/4a088f125c970d6d6ea52c927f96fe39b330d0f1",
+                "reference": "4a088f125c970d6d6ea52c927f96fe39b330d0f1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
+                "php": ">=5.6",
+                "phpunit/phpunit": "^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
             },
             "require-dev": {
-                "yoast/yoastcs": "^2.3.0"
+                "php-parallel-lint/php-console-highlighter": "^1.0.0",
+                "php-parallel-lint/php-parallel-lint": "^1.4.0",
+                "yoast/yoastcs": "^3.1.0"
             },
             "type": "library",
             "extra": {
@@ -2897,9 +2899,10 @@
             ],
             "support": {
                 "issues": "https://github.com/Yoast/PHPUnit-Polyfills/issues",
+                "security": "https://github.com/Yoast/PHPUnit-Polyfills/security/policy",
                 "source": "https://github.com/Yoast/PHPUnit-Polyfills"
             },
-            "time": "2023-08-19T14:25:08+00:00"
+            "time": "2024-04-05T16:36:44+00:00"
         }
     ],
     "aliases": [],
