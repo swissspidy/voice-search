@@ -13,7 +13,7 @@
  * License:     GPLv2+
  * Text Domain: voice-search
  * Requires at least: 5.0
- * Requires PHP: 5.6
+ * Requires PHP: 7.4
  */
 
 /**
@@ -43,7 +43,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 $voice_search_requirements_check = new WP_Requirements_Check(
 	array(
 		'title' => __( 'Voice Search', 'voice-search' ),
-		'php'   => '5.6',
+		'php'   => '7.4',
 		'wp'    => '5.0',
 		'file'  => __FILE__,
 		'i18n'  => array(
