@@ -162,7 +162,7 @@ jobs:
               if: ${{ matrix.coverage }}
 
             - name: Upload code coverage report
-              uses: codecov/codecov-action@v5.0.2
+              uses: codecov/codecov-action@v5.0.7
               with:
                   file: coverage.xml
                   flags: default
@@ -170,7 +170,7 @@ jobs:
               if: ${{ matrix.coverage }}
 
             - name: Upload code coverage report
-              uses: codecov/codecov-action@v5.0.2
+              uses: codecov/codecov-action@v5.0.7
               with:
                   file: coverage-multisite.xml
                   flags: multisite
