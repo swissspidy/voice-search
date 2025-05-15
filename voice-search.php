@@ -36,29 +36,8 @@
 
 defined( 'WPINC' ) or die;
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require __DIR__ . '/vendor/autoload.php';
-}
+require __DIR__ . '/vendor/autoload.php';
 
-$voice_search_requirements_check = new WP_Requirements_Check(
-	array(
-		'title' => __( 'Voice Search', 'voice-search' ),
-		'php'   => '7.4',
-		'wp'    => '5.0',
-		'file'  => __FILE__,
-		'i18n'  => array(
-			/* translators: 1: plugin name. 2: minimum PHP version. */
-			'php' => __( '&#8220;%1$s&#8221; requires PHP %2$s or higher. Please upgrade.', 'voice-search' ),
-			/* translators: 1: plugin name. 2: minimum WordPress version. */
-			'wp'  => __( '&#8220;%1$s&#8221; requires WordPress %2$s or higher. Please upgrade.', 'voice-search' ),
-		),
-	)
-);
+require_once __DIR__ . '/inc/namespace.php';
 
-if ( $voice_search_requirements_check->passes() ) {
-	require_once __DIR__ . '/inc/namespace.php';
-
-	VoiceSearch\bootstrap();
-}
-
-unset( $voice_search_requirements_check );
+VoiceSearch\bootstrap();

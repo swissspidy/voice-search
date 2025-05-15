@@ -19,12 +19,11 @@
 	"devDependencies": {
 		"@wordpress/dom-ready": "^4.23.0",
 		"@wordpress/i18n": "^5.23.0",
-		"@wordpress/scripts": "^30.16.0",
-		"rtlcss-webpack-plugin": "^4.0.6"
+		"@wordpress/scripts": "^30.16.0"
 	},
 	"scripts": {
-		"build": "wp-scripts build src/voice-search.js",
-		"start": "wp-scripts start src/voice-search.js",
+		"build": "wp-scripts build src/voice-search.js --output-path=build",
+		"start": "wp-scripts start src/voice-search.js --output-path=build",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"lint:md:docs": "wp-scripts lint-md-docs",

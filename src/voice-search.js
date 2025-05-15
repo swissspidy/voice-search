@@ -18,17 +18,9 @@ domReady( () => {
 	}
 
 	// Get all search forms
-	let speechInputWrappers = document.querySelectorAll( 'form[role=search]' );
-	if ( speechInputWrappers.length === 0 ) {
-		speechInputWrappers = document.querySelectorAll(
-			'form[class=searchform]'
-		);
-	}
-	if ( speechInputWrappers.length === 0 ) {
-		speechInputWrappers = document.querySelectorAll(
-			'form[id=searchform]'
-		);
-	}
+	const speechInputWrappers = document.querySelectorAll(
+		'form[role=search],form[class=searchform],form[id=searchform],input.search-field'
+	);
 
 	[ ...speechInputWrappers ].forEach( ( speechInputWrapper ) => {
 		initializeVoiceSearch( speechInputWrapper );

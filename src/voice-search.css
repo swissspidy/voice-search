@@ -1,6 +1,5 @@
 /**
  * Voice Search
- * https://spinpress.com/wordpress-web-speech-api/
  *
  * Copyright (c) 2015 Pascal Birchler
  * Licensed under the GPLv2+ license.
@@ -28,6 +27,7 @@
 	font-size: 0 !important;
 	box-shadow: none !important;
 	color: inherit;
+	z-index: 1000;
 }
 
 .voice-search-screen-reader-text {
