@@ -49,6 +49,10 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Changelog
 
+### 1.4.1
+
+* Improve compatibility with certain search forms.
+
 ### 1.4.0
 
 * The search form now auto-submits after finishing speaking.
@@ -86,30 +90,6 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Upgrade Notice
 
-### 1.4.0
+### 1.4.1
 
-The search form now auto-submits after finishing speaking.
-
-### 1.3.1
-
-Minor bugfix release to remove some unwanted console messages.
-
-### 1.3.0
-
-Updated for WordPress 5.7 compatibility.
-
-### 1.2.1
-
-Pressing enter now submits the form instead of triggering the microphone button. Also, quicker feedback thanks to less patience.
-
-### 1.2.0
-
-Some themes have really bad search forms. But don’t worry no more! This plugins supports themes like Divi too!
-
-### 1.1.0 ###
-
-This update brings you even better compatibility with popular themes.
-
-### 1.0.0
-
-Initial release
+Improves compatibility with certain search forms.
