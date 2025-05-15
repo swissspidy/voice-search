@@ -8,17 +8,17 @@ updates:
     - package-ecosystem: github-actions
       directory: '/'
       schedule:
-          interval: weekly
+          interval: monthly
       open-pull-requests-limit: 10
 
     - package-ecosystem: npm
       directory: '/'
       schedule:
-          interval: weekly
+          interval: monthly
       open-pull-requests-limit: 10
 
     - package-ecosystem: composer
       directory: '/'
       schedule:
-          interval: weekly
+          interval: monthly
       open-pull-requests-limit: 10
