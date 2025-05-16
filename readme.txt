@@ -5,7 +5,7 @@ Tags:              voice, search, speech, recognition
 Requires at least: 5.0
 Tested up to:      6.8
 Requires PHP:      5.6
-Stable tag:        1.4.1
+Stable tag:        1.4.2
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,8 +31,8 @@ See [this blog post](https://spinpress.com/wordpress-web-speech-api/ "Enabling V
 
 There could be many reasons for this:
 
-* You’re not Google Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
-* Your theme doesn’t use the `get_search_form()` function properly. The plugin relies on the default search form markup
+* You'e not using Google Chrome (check out the browser support [here](http://caniuse.com/#feat=web-speech))
+* Your theme doesn't use the `get_search_form()` function properly. The plugin relies on the default search form markup
 * Your theme does some CSS things that prevents the microphone button from being displayed.
 
 ### Does this plugin still allow users to type or does it entirely replace typing with voice search?
@@ -41,13 +41,17 @@ No, users are still able to type in the search box whatever they want. Voice sea
 
 ### How does it integrate with other search-enhancing plugins such as Relevanssi?
 
-In my tests there weren’t any problems with other plugins like Relevanssi.
+In my tests there weren't any problems with other plugins like Relevanssi.
 
 ## Screenshots
 
 1. The microphone button added to the search form by the plugin.
 
 ## Changelog
+
+### 1.4.2
+
+* Just re-tagged 1.4.1
 
 ### 1.4.1
 
@@ -90,6 +94,6 @@ In my tests there weren’t any problems with other plugins like Relevanssi.
 
 ## Upgrade Notice
 
-### 1.4.1
+### 1.4.2
 
 Improves compatibility with certain search forms.
