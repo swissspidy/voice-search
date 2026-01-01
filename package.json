@@ -18,7 +18,7 @@
 	"homepage": "https://github.com/swissspidy/voice-search",
 	"devDependencies": {
 		"@wordpress/dom-ready": "^4.36.0",
-		"@wordpress/i18n": "^6.9.0",
+		"@wordpress/i18n": "^6.10.0",
 		"@wordpress/scripts": "^31.1.0"
 	},
 	"scripts": {
