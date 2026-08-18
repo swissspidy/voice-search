@@ -19,7 +19,7 @@
 	"devDependencies": {
 		"@wordpress/dom-ready": "^4.51.0",
 		"@wordpress/i18n": "^6.24.0",
-		"@wordpress/scripts": "^31.7.0"
+		"@wordpress/scripts": "^34.1.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build src/voice-search.js --output-path=build",
