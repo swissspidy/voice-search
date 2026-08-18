@@ -7,7 +7,7 @@
  * Plugin Name: Voice Search
  * Plugin URI:  https://github.com/swissspidy/voice-search
  * Description: Allows visitors using Google Chrome to search the site using their voice.
- * Version:     1.4.2
+ * Version:     1.4.3
  * Author:      Pascal Birchler
  * Author URI:  https://pascalbirchler.com
  * License:     GPLv2+
@@ -36,7 +36,9 @@
 
 defined( 'WPINC' ) or die;
 
-require __DIR__ . '/vendor/autoload.php';
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+}
 
 require_once __DIR__ . '/inc/namespace.php';
 

@@ -6,6 +6,12 @@ on:
             - main
     pull_request:
 
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+    # The concurrency group contains the workflow name and the branch name.
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     lint-js:
         name: JS Lints
@@ -17,7 +23,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v7
               with:
-                  node-version: 18
+                  node-version: 'lts/*'
                   cache: npm
 
             - name: Install dependencies
@@ -39,28 +45,17 @@ jobs:
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
-                  php-version: '7.4'
+                  php-version: 'latest'
                   coverage: none
                   tools: composer, cs2pr
-
-            - name: Get Composer cache directory
-              id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            - name: Setup Composer cache
-              uses: pat-s/always-upload-cache@v3.0.11
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-composer-
-                      ${{ runner.os }}-
 
             - name: Validate composer.json
               run: composer validate --no-check-all --strict
 
-            - name: Install dependencies
-              run: composer install
+            - name: Install PHP dependencies
+              uses: ramsey/composer-install@v4
+              with:
+                  composer-options: '--prefer-dist --no-progress --no-interaction --no-scripts'
 
             - name: Lint PHP
               run: composer lint
@@ -81,8 +76,9 @@ jobs:
                 options: --health-cmd="healthcheck.sh --su-mysql --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=3
         continue-on-error: ${{ matrix.experimental }}
         strategy:
+            fail-fast: false
             matrix:
-                php: ['8.2', '8.1', '8.0', '7.4']
+                php: ['8.4', '8.2', '8.1', '8.0', '7.4']
                 wp: ['latest']
                 coverage: [false]
                 experimental: [false]
@@ -92,33 +88,26 @@ jobs:
                       coverage: true
                       experimental: false
 
-                    - php: '8.4'
+                    - php: '8.5'
+                      wp: 'latest'
+                      coverage: false
+                      experimental: true
+
+                    - php: '8.5'
                       wp: 'trunk'
+                      coverage: false
                       experimental: true
 
         steps:
             - name: Checkout
               uses: actions/checkout@v7
 
-            - name: Get Composer cache directory
-              id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            - name: Setup Composer cache
-              uses: pat-s/always-upload-cache@v3.0.11
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-composer-
-                      ${{ runner.os }}-
-
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
                   extensions: mysql
-                  coverage: xdebug
+                  coverage: ${{ matrix.coverage && 'xdebug' || 'none' }}
                   tools: composer, cs2pr
 
             - name: Shutdown default MySQL service
@@ -147,12 +136,7 @@ jobs:
             # See https://make.wordpress.org/core/handbook/references/phpunit-compatibility-and-wordpress-versions/
             - name: Update PHPUnit
               run: |
-                  if [[ $PHP_VERSION != "7.0" ]]; then
-                    composer update --ignore-platform-reqs --no-interaction --no-scripts yoast/phpunit-polyfills --with-dependencies
-                  fi
-              env:
-                  WP_VERSION: ${{ matrix.wp }}
-                  PHP_VERSION: ${{ matrix.php }}
+                  composer update --ignore-platform-reqs --no-interaction --no-scripts yoast/phpunit-polyfills --with-dependencies
 
             - name: Run tests
               run: |
