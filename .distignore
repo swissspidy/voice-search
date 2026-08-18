@@ -13,6 +13,7 @@ tests
 .wp-env.override.json
 .gitignore
 .nvmrc
+codecov.yml
 composer.json
 composer.lock
 eslint.config.js

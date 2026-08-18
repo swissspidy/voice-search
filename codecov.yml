@@ -1,0 +1,31 @@
+# Overall settings for PR integration via codecov.com
+# See https://docs.codecov.com/docs/codecovyml-reference
+
+coverage:
+    status:
+        # Project-level coverage.
+        #
+        # Informational because the report combines PHP coverage from the unit
+        # tests with JS and CSS coverage from the end-to-end tests. The overall
+        # number therefore shifts whenever the mix changes, which says nothing
+        # about the change being reviewed.
+        project:
+            default:
+                base: auto
+                informational: true
+                only_pulls: true
+                target: auto
+                threshold: 1%
+
+        # Patch-level coverage (how well is the PR tested).
+        patch:
+            default:
+                base: auto
+                only_pulls: true
+                target: auto
+                threshold: 1%
+
+# See https://docs.codecov.com/docs/ignoring-paths
+ignore:
+    - 'bin'
+    - 'tests'
