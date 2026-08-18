@@ -1,5 +1,6 @@
 .git
 .github
+artifacts
 .idea
 bin
 node_modules
@@ -8,10 +9,13 @@ tests
 .distignore
 .DS_Store
 .editorconfig
+.wp-env.json
+.wp-env.override.json
 .gitignore
 .nvmrc
 composer.json
 composer.lock
+eslint.config.js
 package.json
 package-lock.json
 phpcs.xml.dist

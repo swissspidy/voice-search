@@ -17,9 +17,13 @@
 	},
 	"homepage": "https://github.com/swissspidy/voice-search",
 	"devDependencies": {
-		"@wordpress/dom-ready": "^4.51.0",
-		"@wordpress/i18n": "^6.24.0",
-		"@wordpress/scripts": "^34.1.0"
+		"@playwright/test": "^1.62.1",
+		"@wordpress/dom-ready": "^4.53.0",
+		"@wordpress/e2e-test-utils-playwright": "^1.53.0",
+		"@wordpress/env": "^11.13.0",
+		"@wordpress/i18n": "^6.26.0",
+		"@wordpress/scripts": "^34.1.0",
+		"monocart-reporter": "^2.12.5"
 	},
 	"scripts": {
 		"build": "wp-scripts build src/voice-search.js --output-path=build",
@@ -28,6 +32,9 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:md:docs": "wp-scripts lint-md-docs",
 		"lint:md:js": "wp-scripts lint-md-js",
-		"format": "wp-scripts format"
+		"format": "wp-scripts format",
+		"test:e2e": "wp-scripts test-playwright --config tests/e2e/playwright.config.js",
+		"wp-env": "wp-env",
+		"wp-env:start": "wp-env start --runtime=playground"
 	}
 }
