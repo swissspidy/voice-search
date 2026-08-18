@@ -43,7 +43,9 @@ npm run test:e2e
 ```
 
 The site is started automatically, but it can also be launched separately with
-`npm run wp-env:start`.
+`npm run wp-env:start`. The Playground runtime only supports a single
+environment, so `.wp-env.json` disables the separate tests environment and
+serves the development one on the port Playwright expects.
 
 Browsers never expose the Speech Recognition API to an automated session, so the
 tests install a fake `webkitSpeechRecognition` implementation that can be driven
