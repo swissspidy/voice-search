@@ -12,6 +12,9 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
 
+permissions:
+    contents: read
+
 jobs:
     e2e:
         name: E2E Tests
@@ -23,7 +26,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v7
               with:
-                  node-version: 'lts/*'
+                  node-version-file: '.nvmrc'
                   cache: npm
 
             - name: Install dependencies
